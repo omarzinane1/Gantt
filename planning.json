@@ -1,0 +1,26 @@
+[
+    {
+        "formule": "V3",
+        "debut": "11:13",
+        "duree": 10,
+        "type": "production"
+    },
+    {
+        "formule": "V1",
+        "debut": "12:14",
+        "duree": 30,
+        "type": "production"
+    },
+    {
+        "formule": "M1",
+        "debut": "11:24",
+        "duree": 40,
+        "type": "production"
+    },
+    {
+        "formule": "M1",
+        "debut": "15:34",
+        "duree": 40,
+        "type": "nettoyage"
+    }
+]

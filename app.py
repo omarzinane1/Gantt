@@ -25,3 +25,7 @@ def add_task():
     with open('planning.json', 'w') as f:
         json.dump(tasks, f, indent=4)
     return redirect('/')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
