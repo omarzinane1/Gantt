@@ -17,6 +17,7 @@ def add_task():
     task = {
         "formule": data["formule"],
         "debut": data["debut"],
+        "fin": data["fin"],
         "duree": int(data["duree"]),
         "type": data["type"]
     }

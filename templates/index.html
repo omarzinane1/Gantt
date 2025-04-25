@@ -3,7 +3,8 @@
 <h2>Ajouter une tâche</h2>
 <form method="POST" action="/add">
     <input type="text" name="formule" placeholder="Nom de la formule" required>
-    <input type="time" name="debut" required>
+    <input type="time" name="debut" title="date debut" required>
+    <input type="time" name="fin" title="date fin" required>
     <input type="number" name="duree" placeholder="Durée (min)" required>
     <select name="type">
         <option value="production">Production</option>
@@ -23,4 +24,5 @@
 
 <!-- Appelle le fichier JS -->
 <script src="{{ url_for('static', filename='script.js') }}"></script>
+
 {% endblock %}

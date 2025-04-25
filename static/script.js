@@ -6,7 +6,8 @@ const tasks = JSON.parse(tasksJson);
 const ctx = document.getElementById('ganttChart').getContext('2d');
 
 const labels = tasks.map(task => task.formule + " (" + task.type + ")");
-const startTimes = tasks.map(task => parseInt(task.debut.split(":")[0]) * 60 + parseInt(task.debut.split(":")[1]));
+const startTimes = tasks.map(task => parseInt(task.debut.split(":")[0]) * 60);
+const endTimes = tasks.map(task => parseInt(task.fin.split(":")[0]) * 60);
 const durations = tasks.map(task => task.duree);
 
 const data = {
@@ -15,7 +16,7 @@ const data = {
         label: 'Planning',
         data: tasks.map((task, i) => ({
             x: startTimes[i],
-            x2: startTimes[i] + durations[i],
+            x2: startTimes[i],
             y: i,
         })),
         backgroundColor: tasks.map(task => {
