@@ -8,6 +8,7 @@ app = Flask(__name__)
 def index():
     with open('planning.json') as f:
         tasks = json.load(f)
+        print(f'Open file {tasks}')
     return render_template('index.html', tasks=tasks)
 
 @app.route('/add', methods=['POST'])

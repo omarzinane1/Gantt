@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Ajouter une tâche</h2>
+<form method="POST" action="/add">
+    <input type="text" name="formule" placeholder="Nom de la formule" required>
+    <input type="time" name="debut" required>
+    <input type="number" name="duree" placeholder="Durée (min)" required>
+    <select name="type">
+        <option value="production">Production</option>
+        <option value="nettoyage">Nettoyage</option>
+        <option value="matiere">Matière première</option>
+    </select>
+    <button type="submit">Ajouter</button>
+</form>
+
+<h2>Planning du jour</h2>
+<canvas id="ganttChart" width="60" height="20"></canvas>
+
+<!-- Injecte les tâches depuis Flask -->
+<script id="tasks-json" type="application/json">
+    {{ tasks | tojson | safe }}
+</script>
+
+<!-- Appelle le fichier JS -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}
